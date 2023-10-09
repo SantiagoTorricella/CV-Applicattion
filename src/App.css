@@ -1,18 +1,23 @@
-body {
-  margin: 0;
-}
 #root {
   margin: 0;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
   background-color: gray;
-  height: 100vh;
-  width: 100vw;
+}
+
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.cv-sheet {
+  height: 100%;
+  width: 50%;
+  background-color: red;
 }
 
 .details {
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 50%;
   background-color: white;
 }
 

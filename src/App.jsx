@@ -3,10 +3,11 @@
 import "./App.css";
 import HiddenInfo from "./components/HiddenEducation";
 import InputText from "./components/InputText";
+import CVPreview from "./components/CVPreview";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <div className="details">
         <div className="personal-details">
           <h3>Personal Details</h3>
@@ -24,7 +25,8 @@ function App() {
           icon={".././public/suitcase.png"}
         ></HiddenInfo>
       </div>
-    </>
+      <CVPreview />
+    </div>
   );
 }
 
