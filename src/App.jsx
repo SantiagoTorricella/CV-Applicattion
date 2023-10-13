@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
-import "./App.css";
-import HiddenInfo from "./components/HiddenEducation";
+import "./styles/App.css";
+import HiddenInfo from "./components/HIddenInfo";
 import InputText from "./components/InputText";
 import CVPreview from "./components/CVPreview";
 
