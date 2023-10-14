@@ -29,6 +29,10 @@ body {
   height: 100%;
   width: 50%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .text-input {
