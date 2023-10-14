@@ -16,7 +16,7 @@ body {
 .app {
   display: flex;
   height: 100%;
-  width: 50vw;
+  width: 80vw;
 }
 
 .cv-sheet {
@@ -28,11 +28,16 @@ body {
 .details {
   height: 100%;
   width: 50%;
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.personal-details {
+  padding: 5em;
+  border-radius: 2em;
+  background-color: white;
 }
 
 .text-input {
@@ -52,6 +57,7 @@ body {
   align-items: center;
   justify-content: space-around;
   background-color: white;
+  padding: 2em;
   border-radius: 1em;
 }
 
