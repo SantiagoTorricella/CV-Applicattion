@@ -3,9 +3,11 @@
 
 function CVPreview() {
   return (
-    <>
-      <div className="cv-sheet"></div>
-    </>
+    <div className="cv-sheet">
+      <div className="cv-header"></div>
+      <div className="cv-education"></div>
+      <div className="cv-experience"></div>
+    </div>
   );
 }
 
