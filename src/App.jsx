@@ -11,17 +11,17 @@ function App() {
       <div className="details">
         <div className="personal-details">
           <h3>Personal Details</h3>
-          <InputText name={"Fullname"} />
-          <InputText name={"Email"} />
-          <InputText name={"Adress"} />
-          <InputText name={"Phone"} />
+          <InputText name="Fullname" />
+          <InputText name="Email" />
+          <InputText name="Adress" />
+          <InputText name="Phone" />
         </div>
         <HiddenInfo
-          name={"Education"}
+          name="Education"
           icon={".././public/mortarboard.png"}
         ></HiddenInfo>
         <HiddenInfo
-          name={"Experience"}
+          name="Experience"
           icon={".././public/suitcase.png"}
         ></HiddenInfo>
       </div>

@@ -10,7 +10,7 @@ function HiddenInfo({ name, icon }) {
           <img className="icons" src={icon} alt="img" />
           <h4>{name}</h4>
         </div>
-        <img src=".././public/invisible.png" alt="" className="icons" />
+        <img src=".././public/invisible.png" alt="img" className="icons" />
       </div>
     </>
   );
