@@ -11,10 +11,10 @@ function App() {
       <div className="details">
         <div className="personal-details">
           <h3>Personal Details</h3>
-          <InputText name="Fullname" />
-          <InputText name="Email" />
-          <InputText name="Adress" />
-          <InputText name="Phone" />
+          <InputText name="Fullname" placeholder="Gordon Freeman" />
+          <InputText name="Email" placeholder="GFreeman@Blackmesa.org" />
+          <InputText name="Adress" placeholder="Confidential" />
+          <InputText name="Phone" placeholder="Confidential" />
         </div>
         <HiddenInfo
           name="Education"
