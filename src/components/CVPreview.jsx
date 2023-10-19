@@ -1,15 +1,12 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
-
+import PersonalDetails from "./PersonalDetails";
 function CVPreview() {
-  const [name, setName] = useState("");
   return (
     <div className="cv-sheet">
       <div className="cv-header">
-        <div>
-          <p>{name}</p>
-        </div>
+        <PersonalDetails />
       </div>
       <div className="cv-education"></div>
       <div className="cv-experience"></div>
