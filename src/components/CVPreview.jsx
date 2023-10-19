@@ -1,6 +1,5 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
-import { useState } from "react";
 import PersonalDetails from "./PersonalDetails";
 function CVPreview() {
   return (

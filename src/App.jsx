@@ -4,8 +4,10 @@ import "./styles/App.css";
 import HiddenInfo from "./components/HIddenInfo";
 import InputText from "./components/InputText";
 import CVPreview from "./components/CVPreview";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
   return (
     <div className="app">
       <div className="details">
