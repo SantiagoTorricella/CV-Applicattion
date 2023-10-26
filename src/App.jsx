@@ -8,12 +8,14 @@ import { useState } from "react";
 
 function App() {
   const [name, setName] = useState("");
+
   return (
     <div className="app">
       <div className="details">
         <div className="personal-details">
           <h3>Personal Details</h3>
-          <InputText name="Fullname" placeholder="Gordon Freeman" />
+          <p>falopita:{name}</p>
+          <InputText name={name} placeholder="Gordon Freeman" />
           <InputText name="Email" placeholder="GFreeman@Blackmesa.org" />
           <InputText name="Adress" placeholder="Confidential" />
           <InputText name="Phone" placeholder="Confidential" />
