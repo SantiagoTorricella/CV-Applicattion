@@ -4,8 +4,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 
-function InputText({ name, placeholder }) {
-  const [name1, setName] = useState("");
+function InputText({ name, placeholder, onChangeFunction }) {
   return (
     <div className="text-input">
       <label htmlFor="name">{name}: </label>
@@ -14,10 +13,8 @@ function InputText({ name, placeholder }) {
         name="name"
         id=""
         placeholder={placeholder}
-        value={name1}
-        onChange={(e) => setName(e.target.value)}
+        onChange={onChangeFunction}
       />
-      <p>{name1}</p>
     </div>
   );
 }
