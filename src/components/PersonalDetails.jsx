@@ -3,7 +3,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 function PersonalDetails({ name, email, address, phone }) {
   return (
-    <div className="personal-details">
+    <div className="cv-header-details">
       <h1>{name}</h1>
       <div className="contact-info">
         {email && (

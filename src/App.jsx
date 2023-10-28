@@ -8,9 +8,22 @@ import CVPreview from "./components/CVPreview";
 
 function App() {
   const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [adress, setAdress] = useState("");
+  const [phone, setPhone] = useState("");
 
   function handleFullName(e) {
     setFullName(e.target.value);
+  }
+
+  function handleAdress(e) {
+    setAdress(e.target.value);
+  }
+  function handleEmail(e) {
+    setEmail(e.target.value);
+  }
+  function handlePhone(e) {
+    setPhone(e.target.value);
   }
 
   return (
@@ -23,9 +36,21 @@ function App() {
             placeholder="Gordon Freeman"
             onChangeFunction={handleFullName}
           />
-          <InputText name="Email" placeholder="GFreeman@Blackmesa.org" />
-          <InputText name="Adress" placeholder="Confidential" />
-          <InputText name="Phone" placeholder="Confidential" />
+          <InputText
+            name="Email"
+            placeholder="GFreeman@Blackmesa.org"
+            onChangeFunction={handleEmail}
+          />
+          <InputText
+            name="Adress"
+            placeholder="Confidential"
+            onChangeFunction={handleAdress}
+          />
+          <InputText
+            name="Phone"
+            placeholder="Confidential"
+            onChangeFunction={handlePhone}
+          />
         </div>
         <HiddenInfo
           name="Education"
@@ -36,7 +61,12 @@ function App() {
           icon={".././public/suitcase.png"}
         ></HiddenInfo>
       </div>
-      <CVPreview fullNameCV={fullName} />
+      <CVPreview
+        fullNameCV={fullName}
+        adressCV={adress}
+        phoneCV={phone}
+        emailCV={email}
+      />
     </div>
   );
 }
