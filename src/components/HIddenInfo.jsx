@@ -12,25 +12,24 @@ function HiddenInfo({ name, icon }) {
   function handlePanelState() {
     setIsPanelOpen(!isPanelOpen);
   }
-  function handleForm() {
+  function swapButtonForm() {
     setFormOpen(!isFormOpen);
   }
 
   return (
     <>
       {isPanelOpen ? (
-        <div className="show-info">
-          <div className="hidden-info" onClick={handlePanelState}>
-            <div className="main-info">
-              <img className="icons" src={icon} alt="img" />
-              <h4>{name}</h4>
-            </div>
-            <img src=".././public/invisible.png" alt="img" className="icons" />
+        <div className="hidden-info" onClick={handlePanelState}>
+          <div className="main-info">
+            <img className="icons" src={icon} alt="img" />
+            <h4>{name}</h4>
           </div>
+          <img src=".././public/invisible.png" alt="img" className="icons" />
+
           {isFormOpen ? (
-            <EducationForm closeForm={handleForm}></EducationForm>
+            <EducationForm closeForm={swapButtonForm}></EducationForm>
           ) : (
-            <button className="add-button" onClick={handleForm}>
+            <button className="add-button" onClick={swapButtonForm}>
               + {name}
             </button>
           )}
