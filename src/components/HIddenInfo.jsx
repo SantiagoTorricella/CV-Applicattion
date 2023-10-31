@@ -2,15 +2,18 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
+import EducationForm from "./EducationForm";
 
 function HiddenInfo({ name, icon }) {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
+  const [isFormOpen, setFormOpen] = useState(false);
+
   function handlePanelState() {
     setIsPanelOpen(!isPanelOpen);
   }
-  function sayHello() {
-    console.log("hello");
+  function handleForm() {
+    setFormOpen(!isFormOpen);
   }
 
   return (
@@ -24,9 +27,13 @@ function HiddenInfo({ name, icon }) {
             </div>
             <img src=".././public/invisible.png" alt="img" className="icons" />
           </div>
-          <button className="add-button" onClick={sayHello}>
-            + {name}
-          </button>
+          {isFormOpen ? (
+            <EducationForm closeForm={handleForm}></EducationForm>
+          ) : (
+            <button className="add-button" onClick={handleForm}>
+              + {name}
+            </button>
+          )}
         </div>
       ) : (
         <div className="hidden-info" onClick={handlePanelState}>
