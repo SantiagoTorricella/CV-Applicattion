@@ -31,42 +31,15 @@ function App() {
       <div className="details">
         <div className="personal-details">
           <h3>Personal Details</h3>
-          <InputText
-            name="Fullname"
-            placeholder="Gordon Freeman"
-            onChangeFunction={handleFullName}
-          />
-          <InputText
-            name="Email"
-            placeholder="GFreeman@Blackmesa.org"
-            onChangeFunction={handleEmail}
-          />
-          <InputText
-            name="Adress"
-            placeholder="Confidential"
-            onChangeFunction={handleAdress}
-          />
-          <InputText
-            name="Phone"
-            placeholder="Confidential"
-            onChangeFunction={handlePhone}
-          />
+          <InputText name="Fullname" placeholder="Gordon Freeman" onChangeFunction={handleFullName} />
+          <InputText name="Email" placeholder="GFreeman@Blackmesa.org" onChangeFunction={handleEmail} />
+          <InputText name="Adress" placeholder="Confidential" onChangeFunction={handleAdress} />
+          <InputText name="Phone" placeholder="Confidential" onChangeFunction={handlePhone} />
         </div>
-        <HiddenInfo
-          name="Education"
-          icon={".././public/mortarboard.png"}
-        ></HiddenInfo>
-        <HiddenInfo
-          name="Experience"
-          icon={".././public/suitcase.png"}
-        ></HiddenInfo>
+        <HiddenInfo name="Education" icon={".././public/mortarboard.png"}></HiddenInfo>
+        <HiddenInfo name="Experience" icon={".././public/suitcase.png"}></HiddenInfo>
       </div>
-      <CVPreview
-        fullNameCV={fullName}
-        adressCV={adress}
-        phoneCV={phone}
-        emailCV={email}
-      />
+      <CVPreview fullNameCV={fullName} adressCV={adress} phoneCV={phone} emailCV={email} />
     </div>
   );
 }

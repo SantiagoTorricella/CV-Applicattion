@@ -8,13 +8,7 @@ function InputText({ name, placeholder, onChangeFunction }) {
   return (
     <div className="text-input">
       <label htmlFor="name">{name}: </label>
-      <input
-        type="text"
-        name="name"
-        id=""
-        placeholder={placeholder}
-        onChange={onChangeFunction}
-      />
+      <input type="text" name="name" id="" placeholder={placeholder} onChange={onChangeFunction} />
     </div>
   );
 }

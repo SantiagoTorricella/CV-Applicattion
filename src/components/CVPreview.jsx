@@ -6,12 +6,7 @@ function CVPreview({ fullNameCV, adressCV, emailCV, phoneCV }) {
   return (
     <div className="cv-sheet">
       <div className="cv-header">
-        <PersonalDetails
-          name={fullNameCV}
-          email={emailCV}
-          address={adressCV}
-          phone={phoneCV}
-        />
+        <PersonalDetails name={fullNameCV} email={emailCV} address={adressCV} phone={phoneCV} />
       </div>
       <div className="main-cv">
         <div className="cv-education">
