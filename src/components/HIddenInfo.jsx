@@ -19,12 +19,14 @@ function HiddenInfo({ name, icon }) {
   return (
     <>
       {isPanelOpen ? (
-        <div className="hidden-info" onClick={handlePanelState}>
-          <div className="main-info">
-            <img className="icons" src={icon} alt="img" />
-            <h4>{name}</h4>
+        <div className="show-info">
+          <div className="hidden-info" onClick={handlePanelState}>
+            <div className="main-info">
+              <img className="icons" src={icon} alt="img" />
+              <h4>{name}</h4>
+            </div>
+            <img src=".././public/invisible.png" alt="img" className="icons" />
           </div>
-          <img src=".././public/invisible.png" alt="img" className="icons" />
 
           {isFormOpen ? (
             <EducationForm closeForm={swapButtonForm}></EducationForm>

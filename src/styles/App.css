@@ -143,3 +143,29 @@
   color: white;
   text-align: center;
 }
+
+.form {
+  padding: 2em;
+}
+
+.form > * {
+  margin-bottom: 10px;
+}
+
+.form-features {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+
+.form-features button {
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+  width: 5em;
+  border: gray solid 3px;
+  border-radius: 1em;
+  background-color: white;
+  text-decoration: none;
+  margin-bottom: 2em;
+}
