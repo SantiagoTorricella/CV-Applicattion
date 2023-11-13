@@ -4,9 +4,11 @@
 import { useState } from "react";
 import EducationForm from "./EducationForm";
 
+/=== SECTION ON EDUCATION-EXPERIENCE THAT SHOWS THEM OR HIDE THEM, AND CAN OPEN A FORM TO ADD MORE ===/;
 function HiddenInfo({ name, icon }) {
+  /this state shows the edu-job single components or hide them/;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-
+  /this state opens or close a form to add information/;
   const [isFormOpen, setFormOpen] = useState(false);
 
   function handlePanelState() {

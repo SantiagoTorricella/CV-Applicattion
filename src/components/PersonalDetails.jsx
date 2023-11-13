@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
+
+/=== TAKES NAME,EMAIL,ADRESS,AND NUMBER AND DISPLAY IT ON CV-HEADER ===/;
 function PersonalDetails({ name, email, address, phone }) {
   return (
     <div className="cv-header-details">

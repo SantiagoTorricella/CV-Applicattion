@@ -7,11 +7,13 @@ import InputText from "./components/InputText";
 import CVPreview from "./components/CVPreview";
 
 function App() {
+  /=== DEFINING USESTATES ===/;
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [adress, setAdress] = useState("");
   const [phone, setPhone] = useState("");
 
+  /=== FUNCTIONS FOR HANDLING EVENTS ===/;
   function handleFullName(e) {
     setFullName(e.target.value);
   }
@@ -24,7 +26,7 @@ function App() {
   function handlePhone(e) {
     setPhone(e.target.value);
   }
-
+  /=== DEFINING MAIN APP ===/;
   return (
     <div className="app">
       <div className="details">
