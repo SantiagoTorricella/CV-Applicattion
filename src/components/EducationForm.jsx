@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable require-jsdoc */
@@ -6,13 +7,27 @@
 import InputText from "./InputText";
 import EducationCard from "./Education/EducationCard";
 import { useState } from "react";
-
-function EducationForm({ closeForm }) {
-  const [educationName, setEducationName] = useState([]);
-
+function EducationForm({ closeForm, formData }) {
   function handleEducationName(e) {
-    setEducationName(e.target.value);
+    educationObject.school = e.target.value;
   }
+  function handleEducationDegree(e) {
+    educationObject.degree = e.target.value;
+  }
+  function handleEducationStartDate(e) {
+    educationObject.startDate = e.target.value;
+  }
+  function handleEducationEndDate(e) {
+    educationObject.endDate = e.target.value;
+  }
+  function handleEducationLocation(e) {
+    educationObject.location = e.target.value;
+  }
+  function saveClickFunction() {
+    console.log(educationObject);
+  }
+
+  let educationObject = { school: "", degree: "", startDate: "", endDate: "", location: "" };
 
   return (
     <>
@@ -22,17 +37,31 @@ function EducationForm({ closeForm }) {
           placeholder="Enter school / university"
           onChangeFunction={handleEducationName}
         ></InputText>
-        <InputText name="Degree" placeholder="Enter degree/ field of study"></InputText>
+        <InputText
+          name="Degree"
+          placeholder="Enter degree/ field of study"
+          onChangeFunction={handleEducationDegree}
+        ></InputText>
         <div className="start-end-education">
-          <InputText name="Start Date" placeholder="Enter start date"></InputText>
-          <InputText name="End Date" placeholder="Enter end date"></InputText>
+          <InputText
+            name="Start Date"
+            placeholder="Enter start date"
+            onChangeFunction={handleEducationStartDate}
+          ></InputText>
+          <InputText name="End Date" placeholder="Enter end date" onChangeFunction={handleEducationEndDate}></InputText>
         </div>
-        <InputText name="Location" placeholder="Enter your location"></InputText>
+        <InputText
+          name="Location"
+          placeholder="Enter your location"
+          onChangeFunction={handleEducationLocation}
+        ></InputText>
         <div className="form-features">
           <button>Delete</button>
           <div>
             <button onClick={closeForm}>Cancel</button>
-            <button type="button">Save</button>
+            <button type="button" onClick={saveClickFunction}>
+              Save
+            </button>
           </div>
         </div>
       </form>

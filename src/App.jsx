@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 import "./styles/App.css";
@@ -26,7 +27,10 @@ function App() {
   function handlePhone(e) {
     setPhone(e.target.value);
   }
-  /=== DEFINING MAIN APP ===/;
+
+  let educations = {};
+  let jobsExperience = {};
+
   return (
     <div className="app">
       <div className="details">
@@ -37,8 +41,8 @@ function App() {
           <InputText name="Adress" placeholder="Confidential" onChangeFunction={handleAdress} />
           <InputText name="Phone" placeholder="Confidential" onChangeFunction={handlePhone} />
         </div>
-        <HiddenInfo name="Education" icon={".././public/mortarboard.png"}></HiddenInfo>
-        <HiddenInfo name="Experience" icon={".././public/suitcase.png"}></HiddenInfo>
+        <HiddenInfo name="Education" data={educations} icon={".././public/mortarboard.png"}></HiddenInfo>
+        <HiddenInfo name="Experience" data={jobsExperience} icon={".././public/suitcase.png"}></HiddenInfo>
       </div>
       <CVPreview fullNameCV={fullName} adressCV={adress} phoneCV={phone} emailCV={email} />
     </div>
