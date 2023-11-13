@@ -28,8 +28,8 @@ function App() {
     setPhone(e.target.value);
   }
 
-  let educations = {};
-  let jobsExperience = {};
+  let educations = [];
+  let jobsExperience = [];
 
   return (
     <div className="app">

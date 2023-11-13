@@ -24,7 +24,8 @@ function EducationForm({ closeForm, formData }) {
     educationObject.location = e.target.value;
   }
   function saveClickFunction() {
-    console.log(educationObject);
+    formData.push(educationObject);
+    console.log(formData);
   }
 
   let educationObject = { school: "", degree: "", startDate: "", endDate: "", location: "" };
