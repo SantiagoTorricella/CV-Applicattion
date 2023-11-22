@@ -26,10 +26,17 @@ function EducationForm({ closeForm, formData }) {
   }
   function saveClickFunction() {
     formData.push(educationObject);
-    console.log(formData);
   }
 
-  let educationObject = { school: "", degree: "", startDate: "", endDate: "", location: "" };
+  let educationObject = {
+    school: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+    isHidden: false,
+    isCollapsed: false,
+  };
 
   return (
     <>
@@ -50,7 +57,11 @@ function EducationForm({ closeForm, formData }) {
             placeholder="Enter start date"
             onChangeFunction={handleEducationStartDate}
           ></InputText>
-          <InputText name="End Date" placeholder="Enter end date" onChangeFunction={handleEducationEndDate}></InputText>
+          <InputText
+            name="End Date"
+            placeholder="Enter end date"
+            onChangeFunction={handleEducationEndDate}
+          ></InputText>
         </div>
         <InputText
           name="Location"

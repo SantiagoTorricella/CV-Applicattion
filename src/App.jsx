@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
@@ -13,6 +14,8 @@ function App() {
   const [email, setEmail] = useState("");
   const [adress, setAdress] = useState("");
   const [phone, setPhone] = useState("");
+  const [educations, setEducation] = useState([]);
+  const [jobsExperience, setJobsExperience] = useState([]);
 
   /=== FUNCTIONS FOR HANDLING EVENTS ===/;
   function handleFullName(e) {
@@ -26,26 +29,54 @@ function App() {
   }
   function handlePhone(e) {
     setPhone(e.target.value);
-    console.log(educations)
+    console.log(educations);
   }
 
-  const [educations,setEducation] = useState([]);
-  const [jobsExperience,setJobsExperience] = useState([]);
-
-  return ( 
+  return (
     <div className="app">
       <div className="details">
         <div className="personal-details">
           <h3>Personal Details</h3>
-          <InputText name="Fullname" placeholder="Gordon Freeman" onChangeFunction={handleFullName} />
-          <InputText name="Email" placeholder="GFreeman@Blackmesa.org" onChangeFunction={handleEmail} />
-          <InputText name="Adress" placeholder="Confidential" onChangeFunction={handleAdress} />
-          <InputText name="Phone" placeholder="Confidential" onChangeFunction={handlePhone} />
+          <InputText
+            name="Fullname"
+            placeholder="Gordon Freeman"
+            onChangeFunction={handleFullName}
+          />
+          <InputText
+            name="Email"
+            placeholder="GFreeman@Blackmesa.org"
+            onChangeFunction={handleEmail}
+          />
+          <InputText
+            name="Adress"
+            placeholder="Confidential"
+            onChangeFunction={handleAdress}
+          />
+          <InputText
+            name="Phone"
+            placeholder="Confidential"
+            onChangeFunction={handlePhone}
+          />
         </div>
-        <HiddenInfo name="Education" data={educations} icon={".././public/mortarboard.png"}></HiddenInfo>
-        <HiddenInfo name="Experience" data={jobsExperience} icon={".././public/suitcase.png"}></HiddenInfo>
+        <HiddenInfo
+          name="Education"
+          data={educations}
+          icon={".././public/mortarboard.png"}
+        ></HiddenInfo>
+        <HiddenInfo
+          name="Experience"
+          data={jobsExperience}
+          icon={".././public/suitcase.png"}
+        ></HiddenInfo>
       </div>
-      <CVPreview fullNameCV={fullName} adressCV={adress} phoneCV={phone} emailCV={email} />
+      <CVPreview
+        fullNameCV={fullName}
+        adressCV={adress}
+        phoneCV={phone}
+        emailCV={email}
+        education={educations}
+        jobsExperience={jobsExperience}
+      />
     </div>
   );
 }

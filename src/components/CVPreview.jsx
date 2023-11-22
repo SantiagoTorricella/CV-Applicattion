@@ -2,11 +2,27 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 import PersonalDetails from "./PersonalDetails";
-function CVPreview({ fullNameCV, adressCV, emailCV, phoneCV }) {
+function CVPreview({
+  fullNameCV,
+  adressCV,
+  emailCV,
+  phoneCV,
+  education,
+  jobsExperience,
+}) {
+  const listItems = education.map((product) => (
+    <li key={product.id}>{product.school}</li>
+  ));
+
   return (
     <div className="cv-sheet">
       <div className="cv-header">
-        <PersonalDetails name={fullNameCV} email={emailCV} address={adressCV} phone={phoneCV} />
+        <PersonalDetails
+          name={fullNameCV}
+          email={emailCV}
+          address={adressCV}
+          phone={phoneCV}
+        />
       </div>
       <div className="main-cv">
         <div className="cv-education">
@@ -16,6 +32,7 @@ function CVPreview({ fullNameCV, adressCV, emailCV, phoneCV }) {
           <h3 className="cv-title-header">Professional Experience</h3>
         </div>
       </div>
+      <div>{listItems}</div>
     </div>
   );
 }
