@@ -7,6 +7,7 @@
 import InputText from "./InputText";
 import EducationCard from "./Education/EducationCard";
 import { useState } from "react";
+
 function EducationForm({ closeForm, formData }) {
   function handleEducationName(e) {
     educationObject.school = e.target.value;

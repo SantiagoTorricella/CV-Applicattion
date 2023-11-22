@@ -26,12 +26,13 @@ function App() {
   }
   function handlePhone(e) {
     setPhone(e.target.value);
+    console.log(educations)
   }
 
-  let educations = [];
-  let jobsExperience = [];
+  const [educations,setEducation] = useState([]);
+  const [jobsExperience,setJobsExperience] = useState([]);
 
-  return (
+  return ( 
     <div className="app">
       <div className="details">
         <div className="personal-details">
