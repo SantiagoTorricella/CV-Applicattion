@@ -4,11 +4,10 @@
 import { useState } from "react";
 import EducationForm from "./EducationForm";
 
-/=== SECTION ON EDUCATION-EXPERIENCE THAT SHOWS THEM OR HIDE THEM, AND CAN OPEN A FORM TO ADD MORE ===/;
-function HiddenInfo({ name, icon, data }) {
-  /this state shows the edu-job single components or hide them/;
+function HiddenInfo({ name, icon, data, changeData }) {
+  // this state shows the edu-job single components or hide them;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  /this state opens or close a form to add information/;
+  // this state opens or close a form to add information;
   const [isFormOpen, setFormOpen] = useState(false);
 
   function handlePanelState() {
@@ -32,7 +31,12 @@ function HiddenInfo({ name, icon, data }) {
           </div>
 
           {isFormOpen ? (
-            <EducationForm closeForm={swapButtonForm} saveClickFunction={saveFormData} formData={data}></EducationForm>
+            <EducationForm
+              closeForm={swapButtonForm}
+              saveClickFunction={saveFormData}
+              formData={data}
+              changeData={changeData}
+            ></EducationForm>
           ) : (
             <button className="add-button" onClick={swapButtonForm}>
               + {name}

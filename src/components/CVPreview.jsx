@@ -11,7 +11,10 @@ function CVPreview({
   jobsExperience,
 }) {
   const listItems = education.map((product) => (
-    <li key={product.id}>{product.school}</li>
+    <li key={product.id}>
+      {product.school}
+      {product.startDate}
+    </li>
   ));
 
   return (

@@ -9,7 +9,7 @@ import InputText from "./components/InputText";
 import CVPreview from "./components/CVPreview";
 
 function App() {
-  /=== DEFINING USESTATES ===/;
+  // === DEFINING USESTATES ===
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [adress, setAdress] = useState("");
@@ -17,7 +17,7 @@ function App() {
   const [educations, setEducation] = useState([]);
   const [jobsExperience, setJobsExperience] = useState([]);
 
-  /=== FUNCTIONS FOR HANDLING EVENTS ===/;
+  // === FUNCTIONS FOR HANDLING EVENTS ===
   function handleFullName(e) {
     setFullName(e.target.value);
   }
@@ -31,6 +31,9 @@ function App() {
     setPhone(e.target.value);
     console.log(educations);
   }
+  function handleEducations(data) {
+    setEducation([...educations, data]);
+  }
 
   return (
     <div className="app">
@@ -38,22 +41,22 @@ function App() {
         <div className="personal-details">
           <h3>Personal Details</h3>
           <InputText
-            name="Fullname"
+            labelName="Fullname"
             placeholder="Gordon Freeman"
             onChangeFunction={handleFullName}
           />
           <InputText
-            name="Email"
+            labelName="Email"
             placeholder="GFreeman@Blackmesa.org"
             onChangeFunction={handleEmail}
           />
           <InputText
-            name="Adress"
+            labelName="Adress"
             placeholder="Confidential"
             onChangeFunction={handleAdress}
           />
           <InputText
-            name="Phone"
+            labelName="Phone"
             placeholder="Confidential"
             onChangeFunction={handlePhone}
           />
@@ -61,6 +64,7 @@ function App() {
         <HiddenInfo
           name="Education"
           data={educations}
+          changeData={handleEducations}
           icon={".././public/mortarboard.png"}
         ></HiddenInfo>
         <HiddenInfo

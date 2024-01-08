@@ -7,28 +7,10 @@
 import InputText from "./InputText";
 import EducationCard from "./Education/EducationCard";
 import { useState } from "react";
+import CVPreview from "./CVPreview";
 
-function EducationForm({ closeForm, formData }) {
-  function handleEducationName(e) {
-    educationObject.school = e.target.value;
-  }
-  function handleEducationDegree(e) {
-    educationObject.degree = e.target.value;
-  }
-  function handleEducationStartDate(e) {
-    educationObject.startDate = e.target.value;
-  }
-  function handleEducationEndDate(e) {
-    educationObject.endDate = e.target.value;
-  }
-  function handleEducationLocation(e) {
-    educationObject.location = e.target.value;
-  }
-  function saveClickFunction() {
-    formData.push(educationObject);
-  }
-
-  let educationObject = {
+function EducationForm({ closeForm, formData, changeData }) {
+  const [educationObject, setEducationObject] = useState({
     school: "",
     degree: "",
     startDate: "",
@@ -36,35 +18,54 @@ function EducationForm({ closeForm, formData }) {
     location: "",
     isHidden: false,
     isCollapsed: false,
-  };
+  });
+
+  function handleEducationName(e) {
+    setEducationObject({ ...educationObject, school: e.target.value });
+  }
+  function handleEducationDegree(e) {
+    setEducationObject({ ...educationObject, degree: e.target.value });
+  }
+  function handleEducationStartDate(e) {
+    setEducationObject({ ...educationObject, startDate: e.target.value });
+  }
+  function handleEducationEndDate(e) {
+    setEducationObject({ ...educationObject, endDate: e.target.value });
+  }
+  function handleEducationLocation(e) {
+    setEducationObject({ ...educationObject, location: e.target.value });
+  }
+  function saveClickFunction() {
+    changeData(educationObject);
+  }
 
   return (
     <>
       <form className="form" action="">
         <InputText
-          name="School"
+          labelName="School"
           placeholder="Enter school / university"
           onChangeFunction={handleEducationName}
         ></InputText>
         <InputText
-          name="Degree"
+          labelName="Degree"
           placeholder="Enter degree/ field of study"
           onChangeFunction={handleEducationDegree}
         ></InputText>
         <div className="start-end-education">
           <InputText
-            name="Start Date"
+            labelName="Start Date"
             placeholder="Enter start date"
             onChangeFunction={handleEducationStartDate}
           ></InputText>
           <InputText
-            name="End Date"
+            labelName="End Date"
             placeholder="Enter end date"
             onChangeFunction={handleEducationEndDate}
           ></InputText>
         </div>
         <InputText
-          name="Location"
+          labelName="Location"
           placeholder="Enter your location"
           onChangeFunction={handleEducationLocation}
         ></InputText>

@@ -5,11 +5,17 @@
 import { useState } from "react";
 
 /=== GENERAL INPUT THAT TAKES NAME,PLACEHOLDER, AND A FUNCTION ONCHANGE/;
-function InputText({ name, placeholder, onChangeFunction }) {
+function InputText({ labelName, placeholder, onChangeFunction }) {
   return (
     <div className="text-input">
-      <label htmlFor="name">{name}: </label>
-      <input type="text" name="name" id="" placeholder={placeholder} onChange={onChangeFunction} />
+      <label htmlFor="name">{labelName}: </label>
+      <input
+        type="text"
+        name="name"
+        id=""
+        placeholder={placeholder}
+        onChange={onChangeFunction}
+      />
     </div>
   );
 }
