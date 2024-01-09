@@ -4,7 +4,7 @@
 import { useState } from "react";
 import EducationForm from "./EducationForm";
 
-function HiddenInfo({ name, icon, data, changeData }) {
+function HiddenInfo({ name, icon, changeData }) {
   // this state shows the edu-job single components or hide them;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   // this state opens or close a form to add information;
@@ -16,7 +16,6 @@ function HiddenInfo({ name, icon, data, changeData }) {
   function swapButtonForm() {
     setFormOpen(!isFormOpen);
   }
-  function saveFormData() {}
 
   return (
     <>
@@ -33,8 +32,6 @@ function HiddenInfo({ name, icon, data, changeData }) {
           {isFormOpen ? (
             <EducationForm
               closeForm={swapButtonForm}
-              saveClickFunction={saveFormData}
-              formData={data}
               changeData={changeData}
             ></EducationForm>
           ) : (

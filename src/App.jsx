@@ -4,7 +4,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import "./styles/App.css";
 import { useState } from "react";
-import HiddenInfo from "./components/HIddenInfo";
+import EducationHiddenInfo from "./components/EducationHiddenInfo";
+import JobsHiddenInfo from "./components/JobsHIddenInfo";
 import InputText from "./components/InputText";
 import CVPreview from "./components/CVPreview";
 
@@ -35,6 +36,10 @@ function App() {
     setEducation([...educations, data]);
   }
 
+  function handleJobs(data) {
+    setJobsExperience([...jobsExperience, data]);
+  }
+
   return (
     <div className="app">
       <div className="details">
@@ -61,17 +66,16 @@ function App() {
             onChangeFunction={handlePhone}
           />
         </div>
-        <HiddenInfo
+        <EducationHiddenInfo
           name="Education"
-          data={educations}
           changeData={handleEducations}
           icon={".././public/mortarboard.png"}
-        ></HiddenInfo>
-        <HiddenInfo
+        ></EducationHiddenInfo>
+        <JobsHiddenInfo
           name="Experience"
-          data={jobsExperience}
+          changeData={handleJobs}
           icon={".././public/suitcase.png"}
-        ></HiddenInfo>
+        ></JobsHiddenInfo>
       </div>
       <CVPreview
         fullNameCV={fullName}
