@@ -2,7 +2,7 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
-import EducationForm from "./EducationForm";
+import JobsForm from "./JobsForm";
 
 function HiddenInfo({ name, icon, changeData }) {
   // this state shows the edu-job single components or hide them;
@@ -30,10 +30,10 @@ function HiddenInfo({ name, icon, changeData }) {
           </div>
 
           {isFormOpen ? (
-            <EducationForm
+            <JobsForm
               closeForm={swapButtonForm}
               changeData={changeData}
-            ></EducationForm>
+            ></JobsForm>
           ) : (
             <button className="add-button" onClick={swapButtonForm}>
               + {name}

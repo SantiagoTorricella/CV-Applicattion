@@ -5,11 +5,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 import InputText from "./InputText";
-import EducationCard from "./Education/EducationCard";
 import { useState } from "react";
-import CVPreview from "./CVPreview";
 
-function EducationForm({ closeForm, formData, changeData }) {
+function EducationForm({ closeForm, changeData }) {
   const [educationObject, setEducationObject] = useState({
     school: "",
     degree: "",
