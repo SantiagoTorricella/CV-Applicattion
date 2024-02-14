@@ -13,12 +13,22 @@ function CVPreview({
   const educationItems = education.map((education) => (
     <li key={education.id}>
       {education.school}
+      {education.degree}
       {education.startDate}
+      {education.endDate}
+      {education.location}
     </li>
   ));
 
   const jobItems = jobsExperience.map((job) => (
-    <li key={job.id}>{job.companyName}</li>
+    <li key={job.id}>
+      {job.companyName}
+      {job.positionTitle}
+      {job.startDate}
+      {job.endDate}
+      {job.location}
+      {job.description}
+    </li>
   ));
 
   return (
