@@ -6,33 +6,37 @@ import InputText from "./InputText";
 import { useState } from "react";
 
 function JobsForm({ closeForm, changeData }) {
-  const [educationObject, setEducationObject] = useState({
-    school: "",
-    degree: "",
+  const [jobObject, setJobObject] = useState({
+    companyName: "",
+    positionTitle: "",
     startDate: "",
     endDate: "",
     location: "",
+    description: "",
     isHidden: false,
     isCollapsed: false,
   });
 
-  function handleEducationName(e) {
-    setEducationObject({ ...educationObject, school: e.target.value });
+  function handleCompanyName(e) {
+    setJobObject({ ...jobObject, companyName: e.target.value });
   }
-  function handleEducationDegree(e) {
-    setEducationObject({ ...educationObject, degree: e.target.value });
+  function handlePositionTitle(e) {
+    setJobObject({ ...jobObject, positionTitle: e.target.value });
   }
-  function handleEducationStartDate(e) {
-    setEducationObject({ ...educationObject, startDate: e.target.value });
+  function handleJobStartDate(e) {
+    setJobObject({ ...jobObject, startDate: e.target.value });
   }
-  function handleEducationEndDate(e) {
-    setEducationObject({ ...educationObject, endDate: e.target.value });
+  function handleJobEndDate(e) {
+    setJobObject({ ...jobObject, endDate: e.target.value });
   }
-  function handleEducationLocation(e) {
-    setEducationObject({ ...educationObject, location: e.target.value });
+  function handleJobLocation(e) {
+    setJobObject({ ...jobObject, location: e.target.value });
+  }
+  function handleJobDescription(e) {
+    setJobObject({ ...jobObject, description: e.target.value });
   }
   function saveClickFunction() {
-    changeData(educationObject);
+    changeData(jobObject);
   }
 
   return (
@@ -41,34 +45,34 @@ function JobsForm({ closeForm, changeData }) {
         <InputText
           labelName="Company Name"
           placeholder="Enter company name"
-          onChangeFunction={handleEducationName}
+          onChangeFunction={handleCompanyName}
         ></InputText>
         <InputText
           labelName="Position Title"
           placeholder="Enter your position title"
-          onChangeFunction={handleEducationDegree}
+          onChangeFunction={handlePositionTitle}
         ></InputText>
         <div className="start-end-education">
           <InputText
             labelName="Start Date"
             placeholder="Enter start date"
-            onChangeFunction={handleEducationStartDate}
+            onChangeFunction={handleJobStartDate}
           ></InputText>
           <InputText
             labelName="End Date"
             placeholder="Enter end date"
-            onChangeFunction={handleEducationEndDate}
+            onChangeFunction={handleJobEndDate}
           ></InputText>
         </div>
         <InputText
           labelName="Location"
           placeholder="Enter your location"
-          onChangeFunction={handleEducationLocation}
+          onChangeFunction={handleJobLocation}
         ></InputText>
         <InputText
           labelName="Description"
           placeholder="Description"
-          onChangeFunction="nati"
+          onChangeFunction={handleJobDescription}
         ></InputText>
         <div className="form-features">
           <button>Delete</button>

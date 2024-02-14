@@ -30,7 +30,6 @@ function App() {
   }
   function handlePhone(e) {
     setPhone(e.target.value);
-    console.log(educations);
   }
   function handleEducations(data) {
     setEducation([...educations, data]);

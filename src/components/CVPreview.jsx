@@ -10,11 +10,15 @@ function CVPreview({
   education,
   jobsExperience,
 }) {
-  const listItems = education.map((product) => (
-    <li key={product.id}>
-      {product.school}
-      {product.startDate}
+  const educationItems = education.map((education) => (
+    <li key={education.id}>
+      {education.school}
+      {education.startDate}
     </li>
+  ));
+
+  const jobItems = jobsExperience.map((job) => (
+    <li key={job.id}>{job.companyName}</li>
   ));
 
   return (
@@ -30,12 +34,13 @@ function CVPreview({
       <div className="main-cv">
         <div className="cv-education">
           <h3 className="cv-title-header">Education</h3>
+          <div>{educationItems}</div>
         </div>
         <div className="cv-experience">
           <h3 className="cv-title-header">Professional Experience</h3>
+          <div>{jobItems}</div>
         </div>
       </div>
-      <div>{listItems}</div>
     </div>
   );
 }
