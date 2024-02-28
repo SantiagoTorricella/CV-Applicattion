@@ -3,8 +3,6 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-
-/=== GENERAL INPUT THAT TAKES NAME,PLACEHOLDER, AND A FUNCTION ONCHANGE/;
 function InputText({ labelName, placeholder, onChangeFunction }) {
   return (
     <div className="text-input">

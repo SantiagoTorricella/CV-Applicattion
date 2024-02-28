@@ -10,7 +10,7 @@ import InputText from "./components/InputText";
 import CVPreview from "./components/CVPreview";
 
 function App() {
-  // === DEFINING USESTATES ===
+  // useStates
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [adress, setAdress] = useState("");
@@ -18,7 +18,7 @@ function App() {
   const [educations, setEducation] = useState([]);
   const [jobsExperience, setJobsExperience] = useState([]);
 
-  // === FUNCTIONS FOR HANDLING EVENTS ===
+  // handling events
   function handleFullName(e) {
     setFullName(e.target.value);
   }

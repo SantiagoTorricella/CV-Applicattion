@@ -7,6 +7,7 @@ import JobsForm from "./JobsForm";
 function HiddenInfo({ name, icon, changeData }) {
   // this state shows the edu-job single components or hide them;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+
   // this state opens or close a form to add information;
   const [isFormOpen, setFormOpen] = useState(false);
 
