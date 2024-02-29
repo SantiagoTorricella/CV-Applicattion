@@ -4,7 +4,7 @@
 import { useState } from "react";
 import EducationForm from "./EducationForm";
 
-function HiddenInfo({ name, icon, changeData }) {
+function HiddenInfo({ name, icon, changeData, educationArray }) {
   // this state shows the edu-job single components or hide them;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   // this state opens or close a form to add information;
@@ -16,6 +16,11 @@ function HiddenInfo({ name, icon, changeData }) {
   function swapButtonForm() {
     setFormOpen(!isFormOpen);
   }
+
+  // maping all education objects
+  const educationList = educationArray.map((education) => (
+    <li key={crypto.randomUUID()}>{education.degree}</li>
+  ));
 
   return (
     <>
@@ -35,9 +40,12 @@ function HiddenInfo({ name, icon, changeData }) {
               changeData={changeData}
             ></EducationForm>
           ) : (
-            <button className="add-button" onClick={swapButtonForm}>
-              + {name}
-            </button>
+            <>
+              {educationList}
+              <button className="add-button" onClick={swapButtonForm}>
+                + {name}
+              </button>
+            </>
           )}
         </div>
       ) : (

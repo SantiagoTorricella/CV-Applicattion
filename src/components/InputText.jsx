@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable require-jsdoc */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+
 function InputText({ labelName, placeholder, onChangeFunction }) {
   return (
     <div className="text-input">

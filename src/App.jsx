@@ -69,6 +69,7 @@ function App() {
           name="Education"
           changeData={handleEducations}
           icon={".././public/mortarboard.png"}
+          educationArray={educations}
         ></EducationHiddenInfo>
         <JobsHiddenInfo
           name="Experience"
