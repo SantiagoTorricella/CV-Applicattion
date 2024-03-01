@@ -3,9 +3,9 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable no-unused-vars */
 
-function InputText({ labelName, placeholder, onChangeFunction }) {
+function InputText({ labelName, placeholder, onChangeFunction, required }) {
   return (
-    <div className="text-input">
+    <form className="text-input">
       <label htmlFor="name">{labelName}: </label>
       <input
         type="text"
@@ -13,8 +13,9 @@ function InputText({ labelName, placeholder, onChangeFunction }) {
         id=""
         placeholder={placeholder}
         onChange={onChangeFunction}
+        required={required}
       />
-    </div>
+    </form>
   );
 }
 

@@ -1,10 +1,14 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 
-function EducationCard(education) {
+function EducationCard(educations) {
+  const educationCards = educations.map((education) => {
+    <h3 key={crypto.randomUUID()}>{education.degree}</h3>;
+  });
+
   return (
     <>
-      <div></div>
+      <div>{educationCards}</div>
     </>
   );
 }

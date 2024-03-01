@@ -2,7 +2,8 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
-import EducationForm from "./EducationForm";
+import CreateEducationForm from "./CreateEducationForm";
+import EducationCard from "./EducationCard";
 
 function HiddenInfo({ name, icon, changeData, educationArray }) {
   // this state shows the edu-job single components or hide them;
@@ -17,11 +18,6 @@ function HiddenInfo({ name, icon, changeData, educationArray }) {
     setFormOpen(!isFormOpen);
   }
 
-  // maping all education objects
-  const educationList = educationArray.map((education) => (
-    <li key={crypto.randomUUID()}>{education.degree}</li>
-  ));
-
   return (
     <>
       {isPanelOpen ? (
@@ -35,13 +31,12 @@ function HiddenInfo({ name, icon, changeData, educationArray }) {
           </div>
 
           {isFormOpen ? (
-            <EducationForm
+            <CreateEducationForm
               closeForm={swapButtonForm}
               changeData={changeData}
-            ></EducationForm>
+            ></CreateEducationForm>
           ) : (
             <>
-              {educationList}
               <button className="add-button" onClick={swapButtonForm}>
                 + {name}
               </button>
@@ -55,7 +50,6 @@ function HiddenInfo({ name, icon, changeData, educationArray }) {
             <h4>{name}</h4>
           </div>
           <img src=".././public/invisible.png" alt="img" className="icons" />
-          <div></div>
         </div>
       )}
     </>

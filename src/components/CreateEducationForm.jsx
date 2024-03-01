@@ -7,7 +7,7 @@
 import InputText from "./InputText";
 import { useState } from "react";
 
-function EducationForm({ closeForm, changeData }) {
+function CreateEducationForm({ closeForm, changeData }) {
   const [educationObject, setEducationObject] = useState({
     school: "",
     degree: "",
@@ -35,6 +35,7 @@ function EducationForm({ closeForm, changeData }) {
   }
   function saveClickFunction() {
     changeData(educationObject);
+    closeForm();
   }
 
   return (
@@ -44,6 +45,7 @@ function EducationForm({ closeForm, changeData }) {
           labelName="School"
           placeholder="Enter school / university"
           onChangeFunction={handleEducationName}
+          required={true}
         ></InputText>
         <InputText
           labelName="Degree"
@@ -81,4 +83,4 @@ function EducationForm({ closeForm, changeData }) {
   );
 }
 
-export default EducationForm;
+export default CreateEducationForm;
